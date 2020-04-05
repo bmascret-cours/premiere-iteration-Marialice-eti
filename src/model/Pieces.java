@@ -28,14 +28,14 @@ public interface Pieces {
 	 * @param xFinal, yFinal
 	 * @return 
 	 */
-	public boolean isMoveOk(int xFinal, int yFinal)
+	public boolean isMoveOk(int xFinal, int yFinal);
 	
 	/**
 	 * Renvoie true si le déplacement est effectué
 	 * @param xFinal, yFinal
 	 * @return 
 	 */
-	public boolean move(int xFinal, int yFinal)
+	public boolean move(int xFinal, int yFinal);
 	
 	/**
 	 * Renvoie true si piece effectivement capturée 

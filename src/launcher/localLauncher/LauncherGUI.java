@@ -1,6 +1,8 @@
 package launcher.localLauncher;
 
 import java.awt.Dimension;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 import java.util.Observer;
 
 import javax.swing.JFrame;
@@ -19,7 +21,8 @@ import vue.ChessGameGUI;
  * les échanges passent par le contrôleur (ChessGameControlers)
  * 
  */
-public class LauncherGUI {
+
+public class LauncherGUI{
 
 	/**
 	 * @param args
@@ -36,7 +39,7 @@ public class LauncherGUI {
 		chessGame = new ChessGame();	
 		chessGameControler = new ChessGameControler(chessGame);
 		
-		frame = new ChessGameGUI("Jeu d'échec", chessGameControler,  dim);
+		frame = new ChessGameGUI("Jeu d'Echec", chessGameControler,  dim);
 		chessGame.addObserver((Observer) frame);
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

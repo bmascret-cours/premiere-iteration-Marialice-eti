@@ -3,18 +3,20 @@ package model;
 public class Tour extends AbstractPiece {
 	
 	public Tour(Couleur couleur_de_piece,Coord coord) {
-		AbstractPiece(Couleur couleur,Coord coord);
+		super(couleur_de_piece,coord);
+		setName("tour");
 	}
 	
 	public boolean isMoveOk(int xFinal,int yFinal) {
+		boolean val_ret=false;
 		if ((coord.x==xFinal) & (yFinal<=8) &  (yFinal>=1)) {
-			return true
+			val_ret=true;
 		}
 		
 		if ((coord.y==yFinal) & (xFinal<=8) &  (xFinal>=1)) {
-			return true
+			val_ret=true;
 		}
-		return false	
+		return val_ret;	
 	}
 	
 }

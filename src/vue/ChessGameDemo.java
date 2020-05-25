@@ -1,22 +1,18 @@
-package model;
+package vue;
 
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
 import javax.swing.*;
-
-import tools.ChessImageProvider;
-import tools.ChessPieceImage;
-import tools.ChessPiecePos;
  
-public class ChessGameGUI extends JFrame implements MouseListener, MouseMotionListener {
+public class ChessGameDemo extends JFrame implements MouseListener, MouseMotionListener {
   JLayeredPane layeredPane;
   JPanel chessBoard;
   JLabel chessPiece;
   int xAdjustment;
   int yAdjustment;
  
-  public ChessGameGUI(){
+  public ChessGameDemo(){
   Dimension boardSize = new Dimension(600, 600);
  
   //  Use a Layered Pane for this this application
@@ -40,25 +36,26 @@ public class ChessGameGUI extends JFrame implements MouseListener, MouseMotionLi
  
   int row = (i / 8) % 2;
   if (row == 0)
-  square.setBackground( i % 2 == 0 ? Color.black : Color.white );
+  square.setBackground( i % 2 == 0 ? Color.blue : Color.white );
   else
-  square.setBackground( i % 2 == 0 ? Color.white : Color.black );
+  square.setBackground( i % 2 == 0 ? Color.white : Color.blue );
   }
  
-  //Add a pieces to the board
-  
-  JLabel piece;
-  JPanel panel;
-  
-  for (int i=0; i<ChessPieceImage.values().length; i++) {
-	  for (int j = 0; j< (ChessPiecePos.values()[i].coords).length; j++) {
-		  piece = new JLabel( new ImageIcon(ChessImageProvider.getImageFile(ChessPiecePos.values()[i].nom, ChessPiecePos.values()[i].couleur) ));
-		  int val =(ChessPiecePos.values()[i].coords[j].x)+ 8*(ChessPiecePos.values()[i].coords[j].y);
-		  panel = (JPanel)chessBoard.getComponent(val);
-		  panel.add(piece);
-	  }
-  }
+  //Add a few pieces to the board
  
+  JLabel piece = new JLabel( new ImageIcon("C:\\Users\\aniam\\git\\poo-coo_03_04_2020\\images\\roiBlancS.png") );
+  JPanel panel = (JPanel)chessBoard.getComponent(0);
+  panel.add(piece);
+  piece = new JLabel(new ImageIcon("C:\\Users\\aniam\\git\\poo-coo_03_04_2020\\images\\roiBlancS.png"));
+  panel = (JPanel)chessBoard.getComponent(15);
+  panel.add(piece);
+  piece = new JLabel(new ImageIcon("C:\\Users\\aniam\\git\\poo-coo_03_04_2020\\images\\roiBlancS.png"));
+  panel = (JPanel)chessBoard.getComponent(16);
+  panel.add(piece);
+  piece = new JLabel(new ImageIcon("C:\\Users\\aniam\\git\\poo-coo_03_04_2020\\images\\roiBlancS.png"));
+  panel = (JPanel)chessBoard.getComponent(20);
+  panel.add(piece);
+
   }
  
   public void mousePressed(MouseEvent e){
@@ -118,7 +115,7 @@ public class ChessGameGUI extends JFrame implements MouseListener, MouseMotionLi
   }
  
   public static void main(String[] args) {
-  JFrame frame = new ChessGameGUI();
+  JFrame frame = new ChessGameDemo();
   frame.setDefaultCloseOperation(DISPOSE_ON_CLOSE );
   frame.pack();
   frame.setResizable(true);
